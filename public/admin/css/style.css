@@ -1,0 +1,66 @@
+.login-box-body, .register-box-body{
+	border-radius: 8px;
+}
+.login-box, .register-box{
+	    width: 360px;
+    top: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    padding-top: 91px;
+    height: 360px;
+    border: 0;
+}
+.sign-in{
+	background: #444444;
+    border: 1px solid #444;
+    border-radius: 20px !important;
+}
+.alert .close
+{
+	text-decoration: none;
+}
+.box-header {
+    color: #fff;
+    display: block;
+    padding: 10px;
+    background: #4487aedb !important;
+    position: relative;
+}
+.box {
+    border: 1px solid #5e98b9;
+    /* box-shadow: 0 1px 0px rgb(34, 45, 50); */
+}
+.box-header.with-border {
+    border-bottom: 1px solid #4487aedb !important;
+}
+.box .box-header .box-tools > .btn > i{
+    color: #fff;
+}
+.green.btn {
+    color: white;
+    background-color: #35aa47;
+    border-color: "";
+    margin-right: 30px;
+    width: 130px;
+}
+.cancel.btn {
+    color: white;
+    background-color: #a94442;
+    border-color: "";
+    width: 130px;
+}
+.cancel.btn  .fa-ban{
+    margin-right: 4px;
+}
+.mtop{
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+@media screen and (max-width: 767px){
+    .green.btn{
+        margin-bottom: 15px;
+        margin-right: 0px;
+    }
+}

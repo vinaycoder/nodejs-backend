@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{title}}</title>
+
+  {% include '../include/admin/header.html' %} 
+  <!-- Left side column. contains the logo and sidebar -->
+  {% include '../include/admin/sidebar.html' %} 
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">    
+    <section class="content-header">
+      <h1>
+        Portfolio Management
+        <small>Portfolio Details</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Edit Portfolio</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">      
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <h3 class="box-title">Portfolio Details</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button> -->
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <form action="/admin/edit-portfolio" method="post" enctype="multipart/form-data">
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                 <label>Portfolio Title</label>
+                  <input type="text" class="form-control" name="name" value="{{ data[0]['name'] }}">                          
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label>Link</label>
+                <input type="text" class="form-control" name="link" value="{{ data[0]['link'] }}"> 
+                <input type="hidden" name="id" value="{{data[0]['id']}}">                
+                <input type="hidden" name="old_image_big" value="{{data[0]['big_image']}}">
+              </div>
+               <div class="form-group">
+                <label>Portfolio Image</label>
+                <input type="file" class="form-control" name="image_big"> 
+                <a href="{{SITEURL}}data/images/{{ data[0]['big_image'] }}" target="__blank"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+              </div>
+              <!-- /.form-group -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Description</label>
+                <textarea name="description" class="form-control" id="" cols="30" style="height: 185px;">{{ data[0]['description'] }}</textarea>
+              </div>              
+              <!-- /.form-group -->
+            </div>
+                  <div class="col-md-12 mtop text-center">
+                <button type="submit" name="submit" id="add" class="btn green"><i class="fa fa-check"></i> Submit</button>
+                 <button type="submit" name="submit" id="add" class="btn cancel"><i class="fa fa-ban" aria-hidden="true"></i>Cancel</button>
+              </div>
+              
+            
+          </div>
+          <!-- /.row -->
+        </div>
+      </form>
+       
+      </div>
+    </section>
+  </div>
+
+  <!-- Control Sidebar -->
+   {% include '../include/admin/rightsidebar.html' %}
+
+  {% include '../include/admin/footer.html' %}
+
+</body>
+</html>
